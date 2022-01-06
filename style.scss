@@ -23,6 +23,7 @@ body {
   height: 100%;
   font-size: 18px;
   font-family: "Outfit", sans-serif;
+  position: relative;
 }
 .container {
   max-width: 1440px;
@@ -37,7 +38,8 @@ body {
   width: 350px;
   background-color: $cardBG;
   border-radius: 15px;
-  box-shadow: 0px 20px 40px #0000006b;
+  box-shadow: 0px 20px 5px 15px #0c1729;
+  transition: ease 0.5s;
 
   .card__info {
     padding: 25px;
@@ -85,9 +87,10 @@ body {
     .card__title {
       color: $white;
       font-size: 1.25em;
-      margin-bottom: 15px;
+      line-height: 25px;
+      margin-bottom: 17px;
       display: block;
-      font-weight: 400;
+      font-weight: 500;
       transition: ease 0.5s;
       &:hover {
         color: $cyan;
@@ -100,7 +103,7 @@ body {
       color: $softBlue;
       margin-bottom: 25px;
       font-weight: 300;
-      line-height: 26px;
+      line-height: 25px;
     }
     .card__extra-info {
       display: flex;
@@ -116,12 +119,12 @@ body {
       }
       .card__price {
         color: $cyan;
-        font-weight: 400;
+        font-weight: 500;
         font-size: 0.9em;
       }
       .card__time-left {
         color: $softBlue;
-        font-weight: 300;
+        font-weight: 500;
         font-size: 0.9em;
       }
     }
@@ -160,6 +163,36 @@ body {
   font-size: 11px;
   text-align: center;
   position: absolute;
-  bottom: 0;
-  padding-bottom: 15 px;
+  bottom: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 330px;
+    .card__info {
+      .card__title {
+        margin-bottom: 15px;
+      }
+      .card__description {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+      }
+      .card__extra-info {
+        margin-bottom: 15px;
+        .card__price {
+          font-size: 0.85em;
+        }
+        .card__time-left {
+          font-size: 0.85em;
+          font-weight: 400;
+        }
+      }
+      .card__creator {
+        margin-bottom: 0;
+        .card__creator-title {
+          font-size: 0.85em;
+        }
+      }
+    }
+  }
 }
